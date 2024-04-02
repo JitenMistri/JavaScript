@@ -35,3 +35,22 @@ console.log(Object.values(user));           // [ '001a', 'Rahul', false ]
 console.log(Object.entries(user));          // [ [ 'id', '001a' ], [ 'name', 'Rahul' ], [ 'logged', false ] ]
 
 console.log(user.hasOwnProperty('name'));   // true
+
+
+// Object De-structuring
+
+const course = {
+    courseName: "javascript course",
+    price: "999",
+    courseInstructor: "Jiten"
+}
+
+// course.courseInstructor      // General way of extracting object values
+
+// de-structuring object
+const {courseInstructor} = course
+const {courseInstructor: instructor} = course       // instructor can be used to fetch the value
+
+console.log(courseInstructor);          // Jiten
+console.log(instructor);                // Jiten
+
