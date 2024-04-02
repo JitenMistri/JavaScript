@@ -46,3 +46,42 @@ function loginUserMessage2(username = "Lucky") {
 
 console.log(loginUserMessage2());       // Its okk here to pass no value
                                         // Lucky logged in Successfully 
+
+
+
+
+// Cart Problem
+// Rest Operator (...abc)
+
+function calculateCartPrice(...num) {
+    return num
+}
+
+console.log(calculateCartPrice(100, 200, 300, 400));        // [100, 200, 300, 400]
+
+
+// Handling Objects with Functions
+
+const user = {
+    name: "Jiten",
+    age: 24
+}
+
+function handlingObjects(obj) {
+    console.log(`Username is ${obj.name} and age is ${obj.age}`);
+}
+
+handlingObjects(user)           // Username is Jiten and age is 24
+
+
+// Handling Arrays with functions
+
+const newArray = [10, 20, 30, 40]
+
+function handleArray(arr) {
+
+    return arr[2]
+    
+}
+
+console.log(handleArray(newArray));
