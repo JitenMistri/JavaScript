@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM Learing</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="heading">DOM Learning by Jiten <span style="display: none;">Mistri</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+    document.getElementById('title')    ->  <h1 id="title" class="heading">DOM Learning by Jiten</h1> 
+-->
+<!-- 
+    document.getElementById('title').id  -> 'title' 
+-->
+<!-- 
+    document.getElementById('title').className  -> 'heading' 
+-->
+<!-- 
+    document.getElementById('title').getAttribute('id')   ->  'title' 
+-->
+<!-- 
+    document.getElementById('title').getAttribute('class')  ->  'heading'  
+-->
+<!-- 
+    document.getElementById('title').setAttribute('class','test')  ->  it will override the existing value of the class
+-->
+<!-- 
+    document.getElementById('title').setAttribute('class','test heading') -> this will keep both the class names
+ -->
+<!-- 
+    const title = document.getElementById('title')
+    title.style.backgroundcolor = 'green'           ->  will add background color
+    title.style.padding = "10px"                    ->  will add padding
+    title.style.borderRadius = "10px"               ->  will add border radius
+ -->
+
+
+<!-- Difference between innerText, innerContent, innerHTML -->
+
+<!-- 
+    title.innerText         ->  'DOM Learning by Jiten'
+    title.innerContent      ->  'DOM Learning by Jiten Mistri'
+    title.innerHTML         ->  'DOM Learning by Jiten <span style="display: none;">Mistri</span>'
+ -->
+
+
+<!-- Query Selectors -->
+<!-- 
+    document.querySelector('h1')        ->  DOM Learning by Jiten Mistri
+    document.querySelector('#title')    ->  <h1 id="title" class="heading">DOM Learning by Jiten <span style="display: none;">Mistri</span></h1>
+    document.querySelector('.heading')  ->  <h1 id="title" class="heading">DOM Learning by Jiten <span style="display: none;">Mistri</span></h1>
+ -->
