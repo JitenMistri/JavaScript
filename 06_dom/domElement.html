@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Jiten Mistri</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);       //This will return a HTMLCollection
+    console.log(parent.children[1]);    //<div class="day">Tuesday</div>
+    console.log(parent.children[1].innerText);      // Tuesday
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);        
+    }                                                       /* Monday
+                                                                Tuesday
+                                                                Wednesday
+                                                                Thursday*/
+
+    parent.children[1].style.color = "red"      // Changes the color of Tuesday to Red
+    console.log(parent.firstElementChild);      // <div class="day">Monday</div>
+    console.log(parent.lastElementChild);       // <div class="day">Thursday</div>
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);        // <div class="day">Monday</div>
+    console.log(dayOne.parentElement);  // <div class="parent">_ _ _</div>
+    console.log(dayOne.nextElementSibling);     // <div class="day">Tuesday</div>
+</script>
+</html>
