@@ -19,9 +19,9 @@
    </div>
 </body>
 <script>
-    // document.getElementById('owl').onclick = function(){
-    //     alert("owl clicked")
-    // }
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
 
      // attachEvent()
     // jQuery - on
@@ -31,24 +31,29 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
-    // document.getElementById('images').addEventListener('click', function(e){
-    //     console.log("clicked inside the ul");
-    // }, false)
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
 
-    // document.getElementById('owl').addEventListener('click', function(e){
-    //     console.log("owl clicked");
-    //     e.stopPropagation()
-    // }, false)
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation()         // -> this helps to prevent bubbling
+    }, false)
+
+    // Default it is false
+    // We write "false" when we want bubbling (Inner/Child element are first/prioritized)
+    // We write "true" when we want capturing (Outer/Parent element are first/prioritized)
     
-    // document.getElementById('google').addEventListener('click',function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation()
-    //     console.log("google clicked");
-    // }, false)
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();         // -> This helps to prevent the default work of this element
+        e.stopPropagation()         // -> // -> this helps to prevent bubbling
+        console.log("google clicked");
+    }, false)
    
     
     document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target.tagName);
+        // console.log(e.target.parentNode); -> this will select the parent node ie., <li> here
+        console.log(e.target.tagName);          // -> this will simply provide the type of element
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
             let removeIt = e.target.parentNode
