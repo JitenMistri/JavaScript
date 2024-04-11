@@ -1,0 +1,25 @@
+Event Properties:
+1. type: The type read-only property of the Event interface returns a string containing the event's type. It is set when the event is constructed and is the name commonly used to refer to the specific event, such as click, load, or error.
+2. target: The read-only target property of the Event interface is a reference to the object onto which the event was dispatched. It is different from Event.currentTarget when the event handler is called during the bubbling or capturing phase of the event.
+        function hide(evt) {
+            // evt.target refers to the clicked <li> element
+            // This is different than evt.currentTarget, which would refer to the parent <ul> in this context
+            evt.target.style.visibility = "hidden";
+        }
+3. timeStamp: This value is the number of milliseconds elapsed from the beginning of the time origin until the event was created.
+4. defaultPrevented: The defaultPrevented read-only property of the Event interface returns a boolean value indicating whether or not the call to Event.preventDefault() canceled the event.
+                A boolean value, where true indicates that the default user agent action was prevented, and false indicates that it was not.
+5. currentTarget: The currentTarget read-only property of the Event interface identifies the element to which the event handler has been attached.
+                This will not always be the same as the element on which the event was fired, because the event may have fired on a descendant of the element with the handler, and then bubbled up to the element with the handler. The element on which the event was fired is given by Event.target.
+// MouseEvent //
+6. clientX / clientY : The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+                For example, clicking on the left edge of the viewport will always result in a mouse event with a clientX value of 0, regardless of whether the page is scrolled horizontally.
+                - The clientY read-only property of the MouseEvent interface provides the vertical coordinate within the application's viewport at which the event occurred (as opposed to the coordinate within the page).
+                For example, clicking on the top edge of the viewport will always result in a mouse event with a clientY value of 0, regardless of whether the page is scrolled vertically.
+7. screenX / screenY : The screenX read-only property of the MouseEvent interface provides the horizontal coordinate (offset) of the mouse pointer in screen coordinates.
+                The screenY read-only property of the MouseEvent interface provides the vertical coordinate (offset) of the mouse pointer in screen coordinates.
+                Note: In a multiscreen environment, screens aligned horizontally will be treated as a single device, and so the range of the screenX value will increase to the combined width of the screens.
+// KeyboardEvent //
+8. altkey : The KeyboardEvent.altKey read-only property is a boolean value that indicates if the alt key (Option or ⌥ on macOS) was pressed (true) or not (false) when the event occurred.
+9. ctrlkey : The KeyboardEvent.ctrlKey read-only property returns a boolean value that indicates if the control key was pressed (true) or not (false) when the event occurred.
+10. shiftkey : The KeyboardEvent.shiftKey read-only property is a boolean value that indicates if the shift key was pressed (true) or not (false) when the event occurred.
